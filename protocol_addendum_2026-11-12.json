@@ -1,0 +1,21 @@
+{
+ "created_utc": "2026-11-12T12:14:30.088454+00:00",
+ "status": "Revision addendum written AFTER the original results and AFTER reviewer comments. Not part of the original prespecification.",
+ "original_protocol_file": "results/protocol.json",
+ "original_protocol_sha256_as_found": "5713851a60fbf3c2e641342ed99cb2985ff08ccdec6e8669d9be83070f65a366",
+ "original_protocol_last_modified_utc": "2026-10-10T12:33:29+00:00",
+ "original_bootstrap_seed": "not recoverable (original notebooks lost)",
+ "reproduction_from_stored_files": "Series 85439 UTC hours; stored arrays equal windows at offset 0; Tables II to V and S1 recomputed from stored forecasts and matched saved CSVs and paper. Table I paper values reproduced as the mean over origins of per origin weekly naive MAE over mean target load (saved T1 csv used a pooled definition).",
+ "bootstrap_for_revision": {
+  "B": 5000,
+  "seed": 20261112,
+  "block": "ISO week (year, week) of the local origin date, resampled independently within pre and post",
+  "interval": "percentile 2.5 and 97.5",
+  "tolerance_vs_saved_endpoints": 0.005
+ },
+ "post_hoc_revision_analyses": [
+  "A1: D recomputed with the daily naive forecast as denominator of R (reviewer comment 4)",
+  "A2: empirical 80 percent interval coverage by horizon band (1 to 24, 25 to 72, 73 to 168 h) by model and year (reviewer comment 8)"
+ ],
+ "not_possible_from_stored_files": "Sensitivity including 2021 and sensitivity S2 (window shift) need data or model runs not stored for those windows"
+}

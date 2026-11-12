@@ -1,0 +1,45 @@
+{
+  "created_utc": "2026-10-10T12:11:20.761911+00:00",
+  "context_hours": 512,
+  "horizon_hours": 168,
+  "origin_every_days": 2,
+  "window_months": "Feb 1 to Sep 30 local time, each year",
+  "years": [
+    2018,
+    2019,
+    2022,
+    2023,
+    2024,
+    2025,
+    2026
+  ],
+  "pre": [
+    2018,
+    2019
+  ],
+  "post": [
+    2026
+  ],
+  "excluded": [
+    2020,
+    2021
+  ],
+  "primary_statistic": "D = [R(post) - R(pre)] for foundation model minus the same for classical control; R = mean MAE of model / mean MAE of weekly seasonal naive",
+  "decision_rule": "Claim consistency with contamination only if D > 0 with 95% block bootstrap (weekly blocks) interval excluding 0 at both 24h and 168h horizons AND the sign holds when window boundaries shift by plus and minus 6 months. Otherwise report a null result.",
+  "assumption": "pre = likely inside pretraining data, post = after release; to be verified against model documentation",
+  "sensitivity_rules": [
+    "S1: drop all origins before Feb 15 local time in every year (early season cold snaps)",
+    "S2: shift window boundaries by plus and minus 6 months where data allow"
+  ],
+  "sensitivity_added_utc": "2026-10-10T12:14:19.029723+00:00",
+  "amendments": [
+    {
+      "utc": "2026-10-10T12:21:38.511449+00:00",
+      "text": "After a smoke test on 8 origins: (1) each horizon (24h, 168h) gets its own forecast call for both foundation models, no slicing; (2) Chronos Bolt library warns that quality may degrade beyond 64 steps, so 168h Bolt results carry that stated limitation; (3) Chronos Bolt run in float32."
+    },
+    {
+      "utc": "2026-10-10T12:33:23.556193+00:00",
+      "text": "POST HOC, exploratory, added after seeing primary results: placebo D across all 21 year pairs to gauge between year noise. Not part of the pre registered decision rule."
+    }
+  ]
+}
