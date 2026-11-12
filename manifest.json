@@ -1,0 +1,42 @@
+{
+ "run_utc": "2026-11-12T12:14:34.545227+00:00",
+ "bootstrap_seed": 20261112,
+ "bootstrap_draws": 5000,
+ "python": "3.13.18",
+ "numpy": "2.4.6",
+ "pandas": "2.2.3",
+ "platform": "Linux-6.6.159+-x86_64-with-glibc2.39",
+ "info": {
+  "bolt_24h_equals_first24_of_168h": true,
+  "tfm_24h_equals_first24_of_168h": true
+ },
+ "checks": {
+  "series has 85439 unique UTC hours": true,
+  "all origins found in series": true,
+  "stored context equals series window": true,
+  "stored target equals series window": true,
+  "all origins at local midnight": true,
+  "118 origins per year": true,
+  "weekly naive equals last 168 context hours": true,
+  "daily naive equals last 24 context hours tiled": true,
+  "Table I matches submitted paper to 0.1": true,
+  "Table IV equals saved T4": true,
+  "D point estimates equal saved D_results.csv": true,
+  "placebo D reproduces saved placebo_D.csv": true
+ },
+ "input_sha256": {
+  "results/protocol.json": "5713851a60fbf3c2e641342ed99cb2985ff08ccdec6e8669d9be83070f65a366",
+  "results/D_results.csv": "fc916d0c775a9aa82d2fe71b5c92509986043c2ddfcc1b23e57e38ca091e9cbd",
+  "results/placebo_D.csv": "ea4fa5f8a47b9f27186c0c9ad97e078731acef81be6da6ead00d3400276aa050",
+  "clean/origins.csv": "070c8cc2ef5d2912e92a9e3b87f42bff536ce4dd5a3f0e6366d809cb6570e5cf",
+  "clean/bench_arrays.npz": "52ad517b58069a6ad561f372f25df43e85c8029c14287c02967f46dc1c56bb39",
+  "clean/ercot_utc_hourly.parquet": "9064785c90a4bffc4ed682fdc1f20c9d557cacc3d6950305eb09a87edd258c4c",
+  "forecasts/fc_naive_week.npz": "6f8e1240f6e81c16a95d1887b9937520c1e34776d7128b4bf0c775da365c3f8b",
+  "forecasts/fc_naive_day.npz": "146900e6b42d3a4920a11c48b55dc123ff4acc55dd8ee050c205336613e39ee4",
+  "forecasts/fc_ets.npz": "493aa3b31d730d2e08f16e3085da562a20daa1f6981346e8ac41b46a04e6ac64",
+  "forecasts/fc_chronos_bolt_h24.npz": "64161276dbf5a80ccb89866cd89abb5da36ff7bc30291b42009ff4ebbd1f7e26",
+  "forecasts/fc_chronos_bolt_h168.npz": "304577097993ae66befe8bd225928706def1ceb56a701a62b129b423a3abe46a",
+  "forecasts/fc_timesfm25_h24.npz": "50f91b7938b21f056fc032c194d6fc5ef586a01dad1f7c0b937c5df988287563",
+  "forecasts/fc_timesfm25_h168.npz": "e808e350ccd7ffeeb84fd67e884728ba2e2aedcd322a854ae4f64fdb6a2b50cd"
+ }
+}
